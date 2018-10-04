@@ -43,7 +43,7 @@ This is entity person... can be longer description but we are in a hurry.
 Get information about this person.
 
 + Parameters
-    + id: `1001` (number, required) - Id of a post.
+    + id: 1 (number, required) - Id of a post.
             
 + Response 200 (application/json)
 
@@ -74,28 +74,16 @@ You may create your own person, just need to post it.
 
 + Response 201 (application/json)
 
-    + Headers
-
-            Location: /person/99
-
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "id": "99",
+                "message" : "created"
             }
+            
+### Delete a Post [DELETE /person/{id}]
+
++ Parameters
+    + id (string) ... Id of the post
+
++ Response 204
