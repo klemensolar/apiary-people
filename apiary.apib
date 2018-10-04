@@ -3,11 +3,15 @@ HOST: http://polls.apiblueprint.org/
 
 # people
 
-API is used for people...
+API is used for people... this should be a longer description of the API
 
 ## People [/people]
 
+We can write something here as well... it's about PEOPLE
+
 ### List All People [GET]
+
+What we have her is a list of people without the paramters
 
 + Response 200 (application/json)
 
@@ -30,12 +34,16 @@ API is used for people...
         ]
 
 
-## API collection [/person]
+## Person [/person/{id}]
+
+This is entity person... can be longer description but we are in a hurry.
 
 ### Person [GET]
-+ Headers
 
-            Location: /person/1
+Get information about this person.
+
++ Parameters
+    + id: `1001` (number, required) - Id of a post.
             
 + Response 200 (application/json)
 
@@ -50,29 +58,25 @@ API is used for people...
                 "timestamp":"2015-04-25 13:57:36 +0700",
             }
         ]
-### Create a New Question [POST]
+### Create a New Person [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+You may create your own person, just need to post it.
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "name": "Zoki",
+            "surname": "Objective-C",
+            "email":"zoki@objective-c.net",
+            "city":"Ljubljana",
+            "age":"44"
         }
 
 + Response 201 (application/json)
 
     + Headers
 
-            Location: /questions/2
+            Location: /person/99
 
     + Body
 
